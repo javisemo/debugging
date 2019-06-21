@@ -88,13 +88,13 @@ void printDestination(Destination d, int pos, int option) {
 	printf("\tCountry:\t%s\n", d.country);
 
 	switch (option) {
-		case BY_TIME:
+		case 4:
 			printf("\tTime:\t\t%lf\n", getTimeFromBcn(d));
 			break;
-		case BY_DISTANCE:
+		case 3:
 			printf("\tDistance:\t%lf\n", getDistanceFromBcn(d));
 			break;
-		case BY_AVG_PRICE:
+		case 2:
 			printf("\tAvg Price:\t%lf\n", getAverageHotelPrice(d));
 			break;
 	}

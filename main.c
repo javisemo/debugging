@@ -39,6 +39,6 @@ int main() {
 	} while (!isExit(option));
 
 	destroy(&l);
-
+	fclose(f);
 	return 0;
 }
