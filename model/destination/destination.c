@@ -21,8 +21,8 @@ double haversine(double ang) {
 // Distància haversine des de BCN
 double getDistanceFromBcn(Destination dest) {
 	Destination bcn;
-	bcn.location.lat = BCN_LON;
-	bcn.location.lon = BCN_LAT;
+	bcn.location.lat = BCN_LAT;
+	bcn.location.lon = BCN_LON;
 
 	return getDistanceBetween(bcn, dest);
 }
@@ -34,8 +34,8 @@ double getDistanceBetween(Destination this, Destination that) {
 	double lonA = toRadians(this.location.lon);
 	double lonB = toRadians(that.location.lon);
 
-	double angleCentral = haversine(latA - latB);
-	angleCentral += cos(latA) * cos(latB) * haversine(lonA - lonB);
+	double angleCentral = haversine(latB - latA);
+	angleCentral += cos(latA) * cos(latB) * haversine(lonB - lonA);
 	angleCentral = 2 * asin(sqrt(angleCentral));
 
 	return EARTH_RADIUS * angleCentral;
